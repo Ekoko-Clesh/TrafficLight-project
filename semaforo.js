@@ -16,9 +16,9 @@ const stopAutomatic = () =>{
     clearInterval(intervalId);
 }
 const turnOnLight ={
-    "red" : () => imagem.src = "./img/vermelho.png",
-    "yellow" : () => imagem.src = "./img/amarelo.png",
-    "green" : () => imagem.src = "./img/verde.png",
+    "red" : () => imagem.src = "vermelho.png",
+    "yellow" : () => imagem.src = "amarelo.png",
+    "green" : () => imagem.src = "verde.png",
     "automatic" : () => intervalId = setInterval(changeColorLight, 1000),
 }
 const changeColorLight = () => {
