@@ -10,7 +10,7 @@ function trafficLightControl(Event){
     turnOnLight[Event.target.id]();
 
 }
-const nextIndex  = () => currentIndex = currentIndex < 2? ++currentIndex : 0;
+const nextIndex  = () => currentIndex = currentIndex < 3? ++currentIndex : 0;
 
 const stopAutomatic = () =>{
     clearInterval(intervalId);
@@ -20,15 +20,15 @@ const turnOnLight ={
     "yellow" : () => imagem.src = "amarelo.png",
     "green" : () => imagem.src = "verde.png",
     "automatic" : () => intervalId = setInterval(changeColorLight, 1000),
+  "desligar" : () => imagem.src = "desligado.png",
 }
 const changeColorLight = () => {
-        const colors = ["red" , "yellow" , "green"];
+        const colors = ["red" , "yellow" , "green", "desligar"];
         var letter = colors[currentIndex];
   console.log(currentIndex, letter)
         turnOnLight[letter]();
         nextIndex();
 }
-
 
 
 
